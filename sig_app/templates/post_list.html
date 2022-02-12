@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+POST LIST
+{% endblock title %}
+
+{% block content %}
+<h4> ALL POSTS</h4>
+{% if object_list %}
+
+{% for post in object_list %}
+<div class="post-entry">
+    <h3>{{ forloop.counter }}.
+            <a href="{% url 'post_detail' post.pk %}">
+            {{ post.title_ps }}
+        </a>
+    </h3>
+    <p>&nbsp; &nbsp; &nbsp; {{ post.body_ps }}</p>
+</div>
+{% endfor %}
+
+{% else %}
+<h2>No Post to show</h2>
+{% endif %}
+
+
+{% endblock content %}

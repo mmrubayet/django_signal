@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+BLOG LIST
+{% endblock title %}
+
+{% block content %}
+
+<h4> ALL BLOGS</h4>
+{% if object_list %}
+
+{% for blog in object_list %}
+<div>
+    <h3>{{ forloop.counter }}.
+        <a href="{% url 'blog_detail' blog.pk %}">
+            {{ blog.title }}
+        </a>
+    </h3>
+    <p>&nbsp; &nbsp; &nbsp; {{ blog.body }}</p>
+</div>
+{% endfor %}
+
+{% else %}
+<h2>No Blog to show</h2>
+{% endif %}
+
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title> {% block title %} {% endblock title %} | Learn Django </title>
+    </head>
+    <style>
+        header a {
+            padding: 10px;"
+        }
+    </style>
+    <body>
+    <h1>Django Blog</h1>
+        <header style="display: flex; border-bottom: 1px solid #999;
+        margin-bottom: 2rem; padding: 10px;">
+            <h2><a href="{% url 'home' %}">Home</a></h2>
+            <h2><a href="{% url 'blog_list' %}">Blog Lists</a></h2>
+            <h2><a href="{% url 'post_list' %}">Post Lists</a></h2>
+            <h2><a href="{% url 'new_blog' %}">+ New Blog</a></h2>
+            <h2><a href="{% url 'new_post' %}">+ New Post</a></h2>
+        </header>
+        <div>
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </body>
+</html>

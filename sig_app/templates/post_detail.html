@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+POST - {{ post.title_ps|truncatechars:15 }}
+{% endblock title %}
+
+{% block content %}
+<div class="post-entry">
+    <h2>Title: {{ post.title_ps }}</h2>
+    <h5>Published on: {{ post.published_time }}</h5>
+    <p>&nbsp; &nbsp; &nbsp; {{ post.body_ps }}</p>
+</div>
+{% endblock content %}
